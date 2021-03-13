@@ -2,6 +2,16 @@ import React, { PureComponent } from 'react';
 import axios from "axios";
 import { DataGrid } from '@material-ui/data-grid';
 import TextField from '@material-ui/core/TextField';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import IconButton from '@material-ui/core/IconButton';
+import Typography from '@material-ui/core/Typography';
+import InputBase from '@material-ui/core/InputBase';
+
+import MenuIcon from '@material-ui/icons/Menu';
+import SearchIcon from '@material-ui/icons/Search';
+
+
 
 class PaginatedBooks extends PureComponent {
     constructor(props) {
@@ -50,18 +60,38 @@ class PaginatedBooks extends PureComponent {
           },
           {   field:"body",
           headerName:"Body",
-          width:800
+          width:850
            },
 
 
         ]
         return (
-            <div style={{ height: 700, width: '100%' }}>
+            <>
+            {/* <AppBar > 
+            <Toolbar>
+         
+          <Typography  variant="h6" noWrap>
+            Frontend Challenge
+          </Typography>
+          <div style={{flexDirection:"row", alignContent:"end"}}>
+           
+            <InputBase
+              placeholder="Search…"
+                style={{color:"white",flex:1}}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+        </Toolbar>
+
+
+            </AppBar> */}
+            <TextField value={this.state.searchInput} onChange={(evt)=>this.onSearchChange(evt)} placeholder="Search.."/>
+            <div style={{ height: 700, width: '100%', marginTop:100 }}>
                 {/* <div className="col-md-12">
                     <h3>About the Property</h3>
                    
                 </div> */}
-                <TextField value={this.state.searchInput} onChange={(evt)=>this.onSearchChange(evt)}/>
+                
                 
                 <DataGrid rows={this.state.data} columns={columns} pageSize={10}
                 
@@ -72,6 +102,7 @@ class PaginatedBooks extends PureComponent {
                   }}
                 />
             </div>
+            </>
 
         );
     }
