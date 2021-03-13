@@ -2,14 +2,7 @@ import React, { PureComponent } from 'react';
 import axios from "axios";
 import { DataGrid } from '@material-ui/data-grid';
 import TextField from '@material-ui/core/TextField';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Typography from '@material-ui/core/Typography';
-import InputBase from '@material-ui/core/InputBase';
 
-import MenuIcon from '@material-ui/icons/Menu';
-import SearchIcon from '@material-ui/icons/Search';
 
 
 
@@ -85,7 +78,7 @@ class PaginatedBooks extends PureComponent {
 
 
             </AppBar> */}
-            <TextField value={this.state.searchInput} onChange={(evt)=>this.onSearchChange(evt)} placeholder="Search.."/>
+            <TextField value={this.state.searchInput} onChange={(evt)=>this.onSearchChange(evt)} placeholder="Search.." style={{marginTop:50}}/>
             <div style={{ height: 700, width: '100%', marginTop:100 }}>
                 {/* <div className="col-md-12">
                     <h3>About the Property</h3>
