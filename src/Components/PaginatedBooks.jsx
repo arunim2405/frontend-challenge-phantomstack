@@ -32,13 +32,13 @@ class PaginatedBooks extends PureComponent {
        
     }
     onSearchChange=(evt)=>{
-        console.log(evt.target.value)
+      
         this.setState({
             searchInput: evt.target.value
         })
     }
     render() {
-        console.log("DATA", this.state.data)
+      
         const columns=[
         {   field:"id",
             headerName:"S.No",
